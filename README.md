@@ -15,10 +15,11 @@ $ docker-compose -f docker-compose-database.yml up
 
 ### Frontend
 
-Use NextJS
+Next.js and the Directus JavaScript SDK
 
 ```
-$
+$ cd directus-cms-web
+
 ```
 
 ### API
@@ -31,7 +32,6 @@ curl -i http://localhost:8055/items/articles"
 
 // or use static token
 curl -i http://localhost:8055/items/articles  -H "Authorization: Bearer RidPNVlEvBA70CkR--rc5-OBUM_0zcOs"
-
 ```
 
 Use fields for related data
