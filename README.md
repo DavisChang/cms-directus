@@ -28,7 +28,7 @@ Update Setting Access Control or Admin Options Token
 
 ```
 // set articles public
-curl -i http://localhost:8055/items/articles"
+curl -i "http://localhost:8055/items/articles"
 
 // or use static token
 curl -i http://localhost:8055/items/articles  -H "Authorization: Bearer RidPNVlEvBA70CkR--rc5-OBUM_0zcOs"

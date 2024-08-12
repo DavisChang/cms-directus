@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  cache:
+    image: redis:6
+
+  directus:
+    image: directus/directus:11.0.1
+    ports:
+      - 8055:8055
+    volumes:
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    depends_on:
+      - cache
+    env_file: .env
+    environment:
+      SECRET: "replace-with-secure-random-value"
+      DB_CLIENT: "pg"
+      CACHE_ENABLED: "true"
+      CACHE_AUTO_PURGE: "true"
+      CACHE_STORE: "redis"
+      REDIS: "redis://cache:6379"
